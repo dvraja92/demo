@@ -1,18 +1,27 @@
 package com.inoptra.employeedepartmentdemo.models;
 
+import javax.persistence.*;
+
 /**
  * @Author: Shrikrishna Prabhumirashi
  * @Description:
  * Represents Employee entity
  **/
+@Entity
 public class Employee {
 
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Long id;
 
 	private String name;
 
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "salary_id")
 	private Salary salary;
 
+	@ManyToOne
+	@JoinColumn(name = "department_id")
 	private Department department;
 
 	public Long getId() {

@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.inoptra.employeedepartmentdemo.models.Employee;
 import com.inoptra.employeedepartmentdemo.repositories.EmployeeRepository;
+import org.springframework.stereotype.Service;
 
 /**
  * @Author: Shrikrishna Prabhumirashi
  * @Description:
  * Service layer contract which supports operations on Employee object
  **/
+@Service
 public class EmployeeService {
 	@Autowired
 	private EmployeeRepository employeeRepository;
